@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace Wisielec
+﻿namespace Wisielec
 {
+    using System.Windows;
+    using ViewModels;
+    using Views;
+
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///     Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+        public void ApplicationStartup(object sender, StartupEventArgs e)
+        {
+            var mainWindowVm = new MainWindowVm();
+            var mainWindow = new MainWindow(mainWindowVm);
+
+            mainWindow.Show();
+        }
     }
 }
